@@ -24,13 +24,15 @@ void handle_signal(int signal) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <interface_reseau>\n", argv[0]);
-        fprintf(stderr, "Exemple: sudo ./arpspoof eth0\n");
+    if (argc != 4) {
+        fprintf(stderr, "Usage: %s <interface_reseau> <target_ip> <spoof_ip>\n", argv[0]);
+        fprintf(stderr, "Exemple: sudo ./arpspoof eth0 192.168.1.10 192.168.1.1\n");
         return EXIT_FAILURE;
     }
 
     char *interface_name = argv[1];
+    char *target_ip = argv[2];
+    char *spoof_ip = argv[3];
     int raw_socket;
 
     signal(SIGINT, handle_signal);
@@ -68,12 +70,8 @@ int main(int argc, char *argv[]) {
     printf("[+] MAC Locale: %02x:%02x:%02x:%02x:%02x:%02x\n",
            my_mac[0], my_mac[1], my_mac[2], my_mac[3], my_mac[4], my_mac[5]);
 
-    // Cible (Victime) - À modifier selon vos besoins
-    char *target_ip = "192.168.1.10"; 
+    // Cible (Victime)
     uint8_t target_mac[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff}; // Broadcast par défaut
-
-    // IP à usurper (ex: la passerelle) - À modifier selon vos besoins
-    char *spoof_ip = "192.168.1.1"; 
 
     // Préparation de l'adresse de destination pour sendto
     struct sockaddr_ll socket_address;
