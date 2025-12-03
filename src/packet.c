@@ -7,10 +7,7 @@
 
 // Constantes standards (définies normalement dans net/ethernet.h)
 #define ETH_P_ARP 0x0806
-#define ARPHRD_ETHER 1
 #define ETH_P_IP 0x0800
-#define ARP_REQUEST 1
-#define ARP_REPLY 2
 
 /**
  * Construit un paquet ARP complet dans le buffer fourni.

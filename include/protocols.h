@@ -4,6 +4,10 @@
 
 #include <stdint.h>
 
+#define ARPHRD_ETHER 1
+#define ARP_REQUEST 1
+#define ARP_REPLY 2
+
 // --- En-tête Ethernet (14 octets) ---
 struct ethernet_header {
     uint8_t dest_mac[6];    // Adresse MAC de destination
