@@ -1,0 +1,22 @@
+================================================================================
+                  THE ARMORY - ARP SPOOFING BOOSTED - QUICK START
+================================================================================
+
+1. COMPILATION
+   Run the command:
+   $ make
+
+2. EXECUTION (INTERACTIVE MODE)
+   Run with sudo:
+   $ sudo ./arpspoof
+
+3. EXECUTION (DIRECT MODE)
+   Syntax: sudo ./arpspoof <interface> <target_ip> <spoof_ip>
+   Example:
+   $ sudo ./arpspoof eth0 192.168.1.10 192.168.1.1
+
+4. CLEANING
+   To remove generated files:
+   $ make clean
+
+================================================================================

@@ -1,0 +1,50 @@
+════════════════════════════════════════════════════════════════════════════════
+
+  ████████╗██╗  ██╗███████╗     █████╗ ██████╗ ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗
+  ╚══██╔══╝██║  ██║██╔════╝    ██╔══██╗██╔══██╗████╗ ████║██╔═══██╗██╔══██╗╚██╗ ██╔╝
+     ██║   ███████║█████╗      ███████║██████╔╝██╔████╔██║██║   ██║██████╔╝ ╚████╔╝ 
+     ██║   ██╔══██║██╔══╝      ██╔══██║██╔══██╗██║╚██╔╝██║██║   ██║██╔══██╗  ╚██╔╝  
+     ██║   ██║  ██║███████╗    ██║  ██║██║  ██║██║ ╚═╝ ██║╚██████╔╝██║  ██║   ██║   
+     ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+
+                      ╔═══════════════════════════════════════╗
+                      ║   ARP SPOOFING ATTACK FRAMEWORK   ║
+                      ╚═══════════════════════════════════════╝
+
+                              [ Network Penetration Tool ]
+                              [ Version: 2.0 - Boosted ]
+
+════════════════════════════════════════════════════════════════════════════════
+
+FEATURES:
+
+  ✓  Interactive and colorful user interface
+  ✓  Stylized ASCII Logo
+  ✓  Intuitive navigation menu
+  ✓  Formatted status messages (success, error, info, warning)
+  ✓  Support for both command line AND interactive mode
+  ✓  Clean signal handling (Ctrl+C)
+  ✓  Real-time statistics display
+  ✓  Detailed manual configuration
+  ✓  List of available network interfaces
+  ✓  Complete documentation included
+
+════════════════════════════════════════════════════════════════════════════════
+
+USAGE:
+
+  Interactive mode:      sudo ./arpspoof
+  Command line mode:     sudo ./arpspoof eth0 192.168.1.50 192.168.1.1
+  Demonstration:         ./demo.sh
+
+════════════════════════════════════════════════════════════════════════════════
+
+⚠️  LEGAL WARNING
+
+This tool is intended exclusively for educational and security testing purposes
+in controlled environments. Using this tool on networks without explicit
+authorization is illegal and may result in prosecution.
+
+The authors decline any responsibility in case of malicious use.
+
+════════════════════════════════════════════════════════════════════════════════
