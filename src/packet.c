@@ -56,7 +56,11 @@ void forge_arp_packet(unsigned char *buffer,
 
     // Target Info
     // "I am looking for (or replying to) [Target IP] who has MAC [Target MAC]"
-    memcpy(arp->target_mac, dest_mac, 6);
+    if (opcode == ARP_REQUEST) {
+        memset(arp->target_mac, 0, 6); // Target MAC is unknown in a Request
+    } else {
+        memcpy(arp->target_mac, dest_mac, 6);
+    }
     
     if (inet_pton(AF_INET, dest_ip, &arp->target_ip) != 1) {
         perror("Destination IP conversion error");

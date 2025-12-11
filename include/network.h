@@ -12,4 +12,8 @@ int get_local_mac(int socket, char *interface_name, uint8_t *mac_buffer);
 // Returns 0 on success, -1 on error
 int get_local_ip(int socket, char *interface_name, char *ip_buffer);
 
+// Retrieves the Netmask of the local interface
+// Returns 0 on success, -1 on error
+int get_netmask(int socket, char *interface_name, char *netmask_buffer);
+
 #endif

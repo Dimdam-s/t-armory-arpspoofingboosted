@@ -59,3 +59,27 @@ int get_local_ip(int sock, char *interface_name, char *ip_buffer) {
 
     return 0;
 }
+
+/**
+ * Retrieves the Netmask of the given interface.
+ * * @param socket : The file descriptor of the socket
+ * @param interface_name : The name of the interface
+ * @param netmask_buffer : A char buffer to store the Netmask as a string
+ */
+int get_netmask(int sock, char *interface_name, char *netmask_buffer) {
+    struct ifreq ifr;
+
+    memset(&ifr, 0, sizeof(ifr));
+    strncpy(ifr.ifr_name, interface_name, IFNAMSIZ - 1);
+
+    // SIOCGIFNETMASK = SIOC Get Interface Netmask
+    if (ioctl(sock, SIOCGIFNETMASK, &ifr) < 0) {
+        perror("[-] Error retrieving Netmask");
+        return -1;
+    }
+
+    struct sockaddr_in *nm = (struct sockaddr_in *)&ifr.ifr_netmask;
+    strcpy(netmask_buffer, inet_ntoa(nm->sin_addr));
+
+    return 0;
+}
